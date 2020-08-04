@@ -1,0 +1,37 @@
+def palindrom(expr):
+    # Rule 1: Get rid of all the punctuation marks
+    import string
+    for c in string.punctuation:
+        expr=expr.replace(c,"")
+    print(expr)
+    # Create Placeholder lists
+    lst=[]
+    revlst=[]
+    punc=[]
+    # Rule 2: convert all charachters into standard form
+    expr=expr.upper()
+    for ch in expr:
+        # Getting rid of blank spaces
+        if ch!=" ":
+            lst.append(ch)
+        
+    print(lst)
+    # Using Slicing to create a mirror image list
+    revlst=lst[::-1]
+    print(revlst)
+    # Boolean logic
+    if lst==revlst:
+        return True
+    else:
+        return False
+    
+    
+
+d=palindrom("Go hang a Salami. I'm a Lasagna hog")
+d
+
+Output:
+Go hang a Salami Im a Lasagna hog
+['G', 'O', 'H', 'A', 'N', 'G', 'A', 'S', 'A', 'L', 'A', 'M', 'I', 'I', 'M', 'A', 'L', 'A', 'S', 'A', 'G', 'N', 'A', 'H', 'O', 'G']
+['G', 'O', 'H', 'A', 'N', 'G', 'A', 'S', 'A', 'L', 'A', 'M', 'I', 'I', 'M', 'A', 'L', 'A', 'S', 'A', 'G', 'N', 'A', 'H', 'O', 'G']
+True
